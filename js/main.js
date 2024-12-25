@@ -1,3 +1,6 @@
-import { getOffers } from './data.js';
+import { createOffers } from './data.js';
+import { createOffer } from './offer.js';
+// import './popup.js';
+const offers = createOffers();
 
-getOffers();
+createOffer(offers[0]);

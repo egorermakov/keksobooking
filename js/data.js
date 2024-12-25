@@ -58,28 +58,25 @@ const createOffer = (element) => {
     },
     offer: {
       title: getRandomArrayElement(OFFER_TITLE),
-      address: {
-        lat: LOCATION.LAT,
-        lng: LOCATION.LNG,
-      },
+      address: LOCATION.LAT + ', ' + LOCATION.LNG,
       price: getRandomPositiveInteger(60, 120),
       type: getRandomArrayElement(OFFER_TYPE),
       rooms: getRandomPositiveInteger(1, 50),
       guests: getRandomPositiveInteger(1, 5),
       checkin: getRandomArrayElement(OFFER_CHECKIN_CHECKOUT),
-      checout: getRandomArrayElement(OFFER_CHECKIN_CHECKOUT),
+      checkout: getRandomArrayElement(OFFER_CHECKIN_CHECKOUT),
       features: Array.from({length: getRandomPositiveInteger(1, 6)}, (v,i) => OFFER_FEATURES[i]),
       description: getRandomArrayElement(OFFER_DESCRIPTION),
       photos: Array.from({length: getRandomPositiveInteger(1, 3)}, (v,i) => OFFER_PHOTOS[i]),
-      location: {
-        lat: LOCATION.LAT,
-        lng: LOCATION.LNG,
-      },
-    }
+    },
+    location: {
+      lat: LOCATION.LAT,
+      lng: LOCATION.LNG,
+    },
   }
 };
 
-const getOffers = () => {
+const createOffers = () => {
   const arr = [];
   for (let i = 0; i <= SIMILAR_OFFER_COUNT - 1; i++) {
     const offer = createOffer(i);
@@ -88,4 +85,4 @@ const getOffers = () => {
   return arr;
 };
 
-export { getOffers };
+export { createOffers };
