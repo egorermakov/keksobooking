@@ -20,4 +20,8 @@ const getRandomArrayElement = (elements) => {
     return elements[getRandomPositiveInteger(0, elements.length - 1)];
 };
 
-export { getRandomPositiveInteger, getRandomPositiveFloat, getRandomArrayElement };
+export {
+    getRandomPositiveInteger, 
+    getRandomPositiveFloat, 
+    getRandomArrayElement 
+};
